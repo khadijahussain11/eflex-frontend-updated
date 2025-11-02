@@ -1,0 +1,158 @@
+/* Dark Theme Team Page */
+.team-page {
+  background: radial-gradient(circle at top left, #0d1117, #0b0f14);
+  color: #e6e6e6;
+  min-height: 100vh;
+  padding: 80px 5%;
+  text-align: center;
+  transition: background 0.4s ease-in-out;
+}
+
+.team-page h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.team-page p {
+  color: #a9b3c1;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Flip Card Container */
+.flip-card {
+  background: transparent;
+  width: 280px;
+  height: 370px;
+  perspective: 1000px;
+  transition: transform 0.6s ease;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.15);
+  border-radius: 20px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card Front */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-card-front {
+  background: #121820;
+  border: 1px solid #1f2a3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.flip-card-front:hover {
+  background: #182131;
+  border-color: #2979ff;
+  box-shadow: 0 0 20px rgba(41, 121, 255, 0.3);
+}
+
+.flip-card-front img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #2979ff;
+}
+
+.flip-card-front h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.flip-card-front h4 {
+  font-size: 0.95rem;
+  color: #66aaff;
+}
+
+/* Card Back */
+.flip-card-back {
+  background: linear-gradient(145deg, #182131, #0e1623);
+  border: 1px solid #1f2a3a;
+  color: #bcd3ff;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+}
+
+.flip-card-back h3 {
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.flip-card-back p {
+  font-size: 0.9rem;
+  color: #a9b3c1;
+  margin-bottom: 12px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.socials img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.socials img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: drop-shadow(0 0 5px #2979ff);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-page h2 {
+    font-size: 2.2rem;
+  }
+
+  .team-page p {
+    font-size: 1rem;
+  }
+
+  .flip-card {
+    width: 260px;
+    height: 350px;
+  }
+}

@@ -1,0 +1,117 @@
+.seo-page {
+  background: radial-gradient(circle at top left, #031633, #010e1f);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 5%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Heading ===== */
+.seo-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.seo-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #00bfff;
+  text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+/* ===== Grid Layout ===== */
+.seo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+/* ===== Card Style ===== */
+.seo-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 174, 255, 0.15);
+  padding: 28px 24px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.seo-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 22px rgba(0, 174, 255, 0.3);
+}
+
+/* ===== Image Wrap ===== */
+.seo-img-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.seo-img {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.4));
+  transition: transform 0.4s ease;
+}
+
+.seo-card:hover .seo-img {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* ===== Title ===== */
+.seo-title {
+  font-size: 1.2rem;
+  color: #00bfff;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* ===== Description ===== */
+.seo-desc {
+  color: #cfd8e3;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===== Glowing Border Animation ===== */
+.seo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.4), rgba(0, 191, 255, 0.05));
+  /* -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0); */
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.seo-card:hover::before {
+  opacity: 1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .seo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-card {
+    padding: 22px;
+  }
+
+  .seo-img {
+    width: 50px;
+    height: 50px;
+  }
+}

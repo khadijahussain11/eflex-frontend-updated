@@ -1,0 +1,236 @@
+.blog-page {
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  color: #e0e0e0;
+  background: #0a0a0f;
+}
+
+/* --- HERO SECTION --- */
+.blog-hero {
+  width: 100%;
+  text-align: center;
+  padding: 80px 20px 60px;
+  background-image: url(/bloghero.jpg);
+  margin-bottom: 60px;
+  animation: fadeIn 1s ease forwards;
+  background-size: cover;
+  background-position: center;
+}
+
+.blog-hero h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.blog-hero p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.featured-section {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 60px;
+  animation: fadeUp 1s ease forwards;
+}
+
+.featured-main {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease;
+}
+
+.featured-main:hover {
+  transform: scale(1.02);
+}
+
+.featured-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-main .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.85));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  color: white;
+}
+
+.featured-main h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.featured-main p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.featured-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-small {
+  position: relative;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.featured-small:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(77, 163, 255, 0.25);
+}
+
+.featured-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-small .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.85));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+}
+
+.featured-small h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.blog-grid {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  animation: fadeUp 1s ease forwards;
+  margin-bottom: 40px;
+}
+
+.blog-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #181818;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(77,163,255,0.25);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.blog-card-content {
+  padding: 20px;
+}
+
+.blog-card-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #4da3ff;
+}
+
+.blog-card-content p {
+  font-size: 0.95rem;
+  color: #cccccc;
+  opacity: 0.85;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #004aad, #00c9ff);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more:hover {
+  background: linear-gradient(90deg, #00c9ff, #004aad);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(77,163,255,0.4);
+}
+
+.animated-line {
+  height: 5px;
+  width: 100%;
+  background: #4da3ff;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  margin-top: 12px;
+}
+
+.animated-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  height: 100%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  animation: slideHighlight 2s linear infinite;
+  border-radius: inherit;
+}
+
+@keyframes slideHighlight {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .featured-section {
+    grid-template-columns: 1fr;
+  }
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

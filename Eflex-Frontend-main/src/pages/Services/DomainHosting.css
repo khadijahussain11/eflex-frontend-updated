@@ -1,0 +1,159 @@
+.domain-hosting {
+  background: radial-gradient(circle at top left, #031633, #010e1f);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 60px 5%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Header ===== */
+.dm-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dm-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #00bfff;
+  text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+.dm-head p {
+  color: #cfd8e3;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* ===== Pricing Grid ===== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding-bottom: 60px;
+}
+
+/* ===== Price Cards ===== */
+.price-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 174, 255, 0.15);
+  border-radius: 16px;
+  text-align: center;
+  padding: 28px 22px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.price-card:hover,
+.price-card.active {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.3);
+}
+
+/* Ribbon for “Best Value” */
+.ribbon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(90deg, #00bfff, #0094ff);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Special styling for “Best Value” card */
+.price-card.best {
+  background: linear-gradient(135deg, rgba(0, 174, 255, 0.2), rgba(0, 174, 255, 0.05));
+  border: 1px solid rgba(0, 174, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.25);
+}
+
+/* ===== Price Top ===== */
+.price-top h3 {
+  color: #00bfff;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.price-top .price {
+  font-size: 2.2rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* ===== Features List ===== */
+.features {
+  list-style: none;
+  text-align: left;
+  color: #cfd8e3;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 20px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* Invisible but functional scrollbar */
+.features::-webkit-scrollbar {
+  width: 6px;
+}
+
+.features::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.features::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.features li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.features .check {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+/* ===== Button ===== */
+.cta {
+  background: linear-gradient(90deg, #00bfff, #0094ff);
+  border: none;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 174, 255, 0.4);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-card {
+    padding: 22px;
+  }
+
+  .features {
+    max-height: 220px;
+  }
+}

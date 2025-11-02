@@ -1,0 +1,131 @@
+/* Portfolio Section */
+.portfolio-page {
+  background: linear-gradient(135deg, #0a0f18 0%, #111b2b 100%);
+  color: #e6e6e6;
+  min-height: 100vh;
+  padding: 80px 6%;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Header */
+.portfolio-head h1 {
+  font-size: 2.6rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.portfolio-head p {
+  color: #aab4c3;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+}
+
+/* Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+/* Card */
+.portfolio-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 123, 255, 0.2);
+  border-radius: 18px;
+  padding: 25px;
+  text-align: left;
+  width: 100%;
+  max-width: 340px;
+  transition: 0.4s ease;
+}
+
+.portfolio-card:hover {
+  border-color: #007bff;
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.2);
+}
+
+/* Image */
+.project-img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+}
+
+/* Titles & Descriptions */
+.portfolio-card h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.portfolio-card p {
+  color: #a9b3c1;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* Tech Tags */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tech-tags span {
+  background: rgba(0, 174, 255, 0.15);
+  color: #00b4ff;
+  border: 1px solid rgba(0, 174, 255, 0.3);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tech-tags span:hover {
+  background: rgba(0, 174, 255, 0.3);
+}
+
+/* View Button */
+.view-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #005eff, #0094ff);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.view-btn:hover {
+  background: linear-gradient(135deg, #007bff, #00b4ff);
+  box-shadow: 0 0 12px rgba(0, 174, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .portfolio-head h1 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio-card {
+    text-align: center;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+}

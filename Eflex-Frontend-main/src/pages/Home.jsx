@@ -57,7 +57,7 @@ export default function Home() {
             <p>Scalable, secure, and cutting-edge digital solutions for your success.</p>
             <div className="hero-buttons">
               <a href="/contact" className="btn btn-primary">Get Started</a>
-              <a href="/services" className="btn btn-outline">Learn More</a>
+              <a href="/blog" className="btn btn-outline">Learn More</a>
             </div>
           </div>
           <div className="hero-image">

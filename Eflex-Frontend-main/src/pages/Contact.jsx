@@ -8,35 +8,45 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [loading, setLoading] = useState(false);
 
+  // ✅ Handle input fields
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // ✅ Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      const res = await axios.post("https://eflex-backend.vercel.app/contact", form);
+      // change to your backend URL after deploy
+      const res = await axios.post("http://localhost:5000/contact", form, {
+        headers: { "Content-Type": "application/json" },
+      });
+
       if (res.data.success) {
         Swal.fire({
           icon: "success",
           title: "Message Sent!",
-          text: "✅ we reached at you soon!",
+          text: "We'll reach out to you soon!",
+          confirmButtonColor: "#3085d6",
         });
         setForm({ name: "", email: "", phone: "", message: "" });
       } else {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "❌ Failed to submit form. Try again.",
+          text: res.data.message || "Failed to submit form. Try again.",
+          confirmButtonColor: "#d33",
         });
       }
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error("Form Submit Error:", error);
       Swal.fire({
         icon: "error",
         title: "Server Error",
-        text: "❌ Something went wrong. Try again later.",
+        text: "Something went wrong. Try again later.",
+        confirmButtonColor: "#d33",
       });
     } finally {
       setLoading(false);
@@ -50,7 +60,7 @@ export default function Contact() {
       <div className="contact-container">
         <h2 className="contact-title">Contact Us:</h2>
 
-        {/* Top info row */}
+        {/* === Contact Info Row === */}
         <div className="contact-info-row">
           <div className="info-box">
             <Mail className="icon" />
@@ -66,7 +76,7 @@ export default function Contact() {
             <div>
               <h4>Call Our Sales Line</h4>
               <p>Our team is ready 24/7.</p>
-              <strong>+92 3191298121</strong>
+              <strong>+92 319 1298121</strong>
             </div>
           </div>
 
@@ -74,13 +84,13 @@ export default function Contact() {
             <MapPin className="icon" />
             <div>
               <h4>Address</h4>
-              <p className="address-line"> Gulshan-e-Iqbal ,PK </p>
+              <p className="address-line">Gulshan-e-Iqbal, PK</p>
               <strong>Karachi, Pakistan</strong>
             </div>
           </div>
         </div>
 
-        {/* Form */}
+        {/* === Contact Form === */}
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <input
@@ -107,6 +117,7 @@ export default function Contact() {
               onChange={handleChange}
             />
           </div>
+
           <textarea
             name="message"
             placeholder="Message"
@@ -115,6 +126,7 @@ export default function Contact() {
             onChange={handleChange}
             required
           ></textarea>
+
           <button type="submit" className="btn-submit" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </button>

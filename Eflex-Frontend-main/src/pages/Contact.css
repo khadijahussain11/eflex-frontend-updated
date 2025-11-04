@@ -148,6 +148,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
+  margin-top: 20px;
 }
 
 .btn-submit:hover {
@@ -161,7 +162,7 @@
   cursor: not-allowed;
 }
 
-/* Responsive Design */
+/* Responsive - Tablets & Small Laptops */
 @media (max-width: 768px) {
   .contact-title {
     font-size: 2rem;
@@ -178,5 +179,93 @@
 
   .form-row {
     flex-direction: column;
+  }
+
+  .contact-form {
+    padding: 30px 25px;
+  }
+}
+
+/* Responsive - Mobile Phones */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 60px 4%;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+
+  .info-box {
+    width: 100%;
+    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .info-box .icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .info-box h4 {
+    font-size: 1rem;
+  }
+
+  .info-box p {
+    font-size: 0.85rem;
+  }
+
+  .contact-form {
+    padding: 25px 18px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem;
+    padding: 10px 12px;
+  }
+
+  .btn-submit {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Devices (less than 320px width) */
+@media (max-width: 320px) {
+  .contact-title {
+    font-size: 1.3rem;
+  }
+
+  .info-box {
+    padding: 15px 12px;
+  }
+
+  .info-box h4 {
+    font-size: 0.9rem;
+  }
+
+  .info-box p {
+    font-size: 0.75rem;
+  }
+
+  .contact-form {
+    padding: 20px 15px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+  }
+
+  .btn-submit {
+    margin-top: 20px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
   }
 }

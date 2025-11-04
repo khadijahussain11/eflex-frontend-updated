@@ -206,7 +206,7 @@
 }
 
 @media (max-width: 480px) {
-  .flip-card-inner { height: 340px; }
+  .flip-card-inner { height: 400px; }
   .flip-card-front img.team-img { width: 110px; height: 110px; }
   .flip-card-back p { font-size: 0.85rem; }
   .front-socials { bottom: 10px; }

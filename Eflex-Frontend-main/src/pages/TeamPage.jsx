@@ -9,7 +9,7 @@ export default function TeamPage() {
       name: "Muhammad Wahaj",
       role: "CEO / Founder",
       tagline:
-        "A visionary leader passionate about driving innovation. Skilled at building strong teams, delivering impactful solutions, and inspiring growth across every project.",
+        "A visionary leader passionate about driving innovation. Skilled at building strong teams, delivering impactful solutions.",
       bio: "Wahaj, the CEO / Founder of our company, is an exemplary leader known for his expertise in pixel-perfect work and effective team management. His visionary approach to projects not only ensures high-quality outcomes but also fosters a culture of innovation within our team.",
       socials: [
         { name: "GitHub", icon: "/icons/github.png", link: "https://github.com/wahajsultan" },
@@ -48,7 +48,7 @@ export default function TeamPage() {
       <p>Passionate innovators building the future together.</p>
       <div className="team-grid">
         {teamMembers.map((member, index) => (
-          <FlipCard key={index} {...member} />
+          <FlipCard  key={index} {...member} />
         ))}
       </div>
     </section>

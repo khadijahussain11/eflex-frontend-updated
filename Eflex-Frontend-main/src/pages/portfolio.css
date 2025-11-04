@@ -115,7 +115,7 @@
   box-shadow: 0 0 12px rgba(0, 174, 255, 0.4);
 }
 
-/* Responsive */
+/* Responsive for tablets and phones */
 @media (max-width: 768px) {
   .portfolio-head h1 {
     font-size: 2.2rem;
@@ -127,5 +127,55 @@
 
   .tech-tags {
     justify-content: center;
+  }
+}
+
+/* Extra small screens (less than 300px width) */
+@media (max-width: 300px) {
+  .portfolio-page {
+    padding: 50px 4%;
+  }
+
+  .portfolio-head h1 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .portfolio-head p {
+    font-size: 0.85rem;
+    margin-bottom: 35px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .portfolio-card {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .project-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .portfolio-card h3 {
+    font-size: 1rem;
+  }
+
+  .portfolio-card p {
+    font-size: 0.8rem;
+  }
+
+  .tech-tags span {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .view-btn {
+    padding: 8px 14px;
+    font-size: 0.75rem;
   }
 }

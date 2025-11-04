@@ -1,79 +1,125 @@
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 import "./Header.css";
 
-export default function Navbar() {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const timeoutRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+  const dropdownRef = useRef(null);
 
-  // ✅ Functions to control hover delay
-  const handleMouseEnter = () => {
-    clearTimeout(timeoutRef.current);
-    setDropdownOpen(true);
+  // Detect screen width change
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
+  // Toggle dropdown
+  const toggleDropdown = () => {
+    if (isMobile) setDropdownOpen((prev) => !prev);
   };
 
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setDropdownOpen(false);
-    }, 200); // 200ms delay prevents accidental close
+  // Close menu when clicking a link
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setDropdownOpen(false);
   };
 
   return (
     <motion.nav
       className="navbar"
-      initial={{ opacity: 0, y: -20 }}
+      initial={{ opacity: 0, y: -15 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
     >
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+      {/* Logo */}
+      <Link to="/" className="logo" onClick={handleLinkClick}>
+        <img src={logo} alt="E-Flex Logo" />
+      </Link>
+
+      {/* Mobile menu toggle */}
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle Menu"
+      >
         {menuOpen ? "✖" : "☰"}
       </button>
 
-      <Link to="/" className="logo">
-        <img src={logo} alt="E-Flex Logo" />
-        {/* <span className="logo-text">E-Flex</span> */}
-      </Link>
-
+      {/* Nav links */}
       <div className={`nav-links ${menuOpen ? "show" : ""}`}>
-        <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/" onClick={handleLinkClick}>
+          Home
+        </Link>
 
-        {/* ✅ Dropdown with hover delay */}
+        {/* Dropdown */}
         <div
           className="dropdown"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          ref={dropdownRef}
+          onMouseEnter={() => !isMobile && setDropdownOpen(true)}
+          onMouseLeave={() => !isMobile && setDropdownOpen(false)}
         >
-          <button
-            className="dropbtn"
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-          >
+          <button className="dropbtn" onClick={toggleDropdown}>
             Services ▾
           </button>
 
-          {dropdownOpen && (
-            <motion.div
-              className="dropdown-content"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25 }}
-            >
-              <Link to="/services/graphic">Graphic Designing</Link>
-              <Link to="/services/digital">Digital Marketing</Link>
-              <Link to="/services/web">Web Development</Link>
-              <Link to="/services/mobile">Mobile App</Link>
-              <Link to="/services/domain">Domain Hosting</Link>
-              <Link to="/services/seo">SEO Service</Link>
-            </motion.div>
-          )}
+          <AnimatePresence>
+            {dropdownOpen && (
+              <motion.div
+                className="dropdown-content"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link to="/services/graphic" onClick={handleLinkClick}>
+                  Graphic Designing
+                </Link>
+                <Link to="/services/digital" onClick={handleLinkClick}>
+                  Digital Marketing
+                </Link>
+                <Link to="/services/web" onClick={handleLinkClick}>
+                  Web Development
+                </Link>
+                <Link to="/services/mobile" onClick={handleLinkClick}>
+                  Mobile App
+                </Link>
+                <Link to="/services/domain" onClick={handleLinkClick}>
+                  Domain Hosting
+                </Link>
+                <Link to="/services/seo" onClick={handleLinkClick}>
+                  SEO Service
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
-        <Link to="/Teampage" onClick={() => setMenuOpen(false)}>Team</Link>
-        <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-        <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
-        <Link to="/contact" className="contact-btn" onClick={() => setMenuOpen(false)}>
+        <Link to="/teampage" onClick={handleLinkClick}>
+          Team
+        </Link>
+        <Link to="/portfolio" onClick={handleLinkClick}>
+          Portfolio
+        </Link>
+        <Link to="/blog" onClick={handleLinkClick}>
+          Blog
+        </Link>
+
+        <Link to="/contact" className="contact-btn" onClick={handleLinkClick}>
           Contact
         </Link>
       </div>

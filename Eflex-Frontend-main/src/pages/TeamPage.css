@@ -1,4 +1,4 @@
-/* Dark Theme Team Page */
+/* 🌌 Dark Theme Team Page */
 .team-page {
   background: radial-gradient(circle at top left, #0d1117, #0b0f14);
   color: #e6e6e6;
@@ -8,8 +8,9 @@
   transition: background 0.4s ease-in-out;
 }
 
+/* HEADINGS */
 .team-page h2 {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 12px;
@@ -18,22 +19,25 @@
 
 .team-page p {
   color: #a9b3c1;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   margin-bottom: 50px;
+  line-height: 1.6;
 }
 
+/* GRID LAYOUT */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
   justify-items: center;
+  align-items: stretch;
 }
 
-/* Flip Card Container */
+/* FLIP CARD CONTAINER */
 .flip-card {
   background: transparent;
   width: 280px;
-  height: 370px;
+  min-height: 380px;
   perspective: 1000px;
   transition: transform 0.6s ease;
 }
@@ -53,7 +57,7 @@
   transform: rotateY(180deg);
 }
 
-/* Card Front */
+/* FRONT SIDE */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -70,7 +74,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 24px 16px 16px;
   transition: background 0.3s;
 }
 
@@ -84,12 +89,13 @@
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   border: 3px solid #2979ff;
+  object-fit: cover;
 }
 
 .flip-card-front h3 {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #fff;
   margin-bottom: 6px;
 }
@@ -97,9 +103,10 @@
 .flip-card-front h4 {
   font-size: 0.95rem;
   color: #66aaff;
+  margin-bottom: 16px;
 }
 
-/* Card Back */
+/* BACK SIDE */
 .flip-card-back {
   background: linear-gradient(145deg, #182131, #0e1623);
   border: 1px solid #1f2a3a;
@@ -118,13 +125,16 @@
   font-size: 0.9rem;
   color: #a9b3c1;
   margin-bottom: 12px;
+  line-height: 1.5;
 }
 
+/* SOCIAL ICONS */
 .socials {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 12px;
+  margin-top: auto;
+  padding-bottom: 10px;
 }
 
 .socials img {
@@ -141,18 +151,157 @@
   filter: drop-shadow(0 0 5px #2979ff);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .team-page h2 {
-    font-size: 2.2rem;
-  }
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
 
-  .team-page p {
-    font-size: 1rem;
+/* Tablets & Small Laptops */
+@media (max-width: 900px) {
+  .team-page {
+    padding: 60px 5%;
   }
 
   .flip-card {
     width: 260px;
-    height: 350px;
+    min-height: 360px;
+  }
+}
+
+/* Mobile Devices (under 600px) */
+@media (max-width: 600px) {
+  .team-page {
+    padding: 50px 4%;
+  }
+
+  .team-page h2 {
+    font-size: 1.8rem;
+  }
+
+  .team-page p {
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+  }
+
+  .team-grid {
+    gap: 28px;
+  }
+
+  .flip-card {
+    width: 230px;
+    min-height: 340px;
+  }
+
+  .flip-card-front img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .flip-card-front h3 {
+    font-size: 1.05rem;
+  }
+
+  .flip-card-front h4 {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .flip-card-back p {
+    font-size: 0.85rem;
+  }
+
+  .socials img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Very Small Devices (under 400px) */
+@media (max-width: 400px) {
+  .team-page {
+    padding: 40px 3%;
+  }
+
+  .team-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .team-page p {
+    font-size: 0.85rem;
+  }
+
+  .flip-card {
+    width: 190px;
+    min-height: 320px;
+  }
+
+  .flip-card-front img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .flip-card-front h3 {
+    font-size: 0.95rem;
+  }
+
+  .flip-card-front h4 {
+    font-size: 0.75rem;
+  }
+
+  .flip-card-back p {
+    font-size: 0.8rem;
+  }
+
+  .socials {
+    gap: 10px;
+  }
+
+  .socials img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Ultra-Small Devices (under 320px) */
+@media (max-width: 320px) {
+  .team-page {
+    padding: 35px 2%;
+  }
+
+  .team-page h2 {
+    font-size: 1.3rem;
+  }
+
+  .team-page p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .flip-card {
+    width: 160px;
+    min-height: 280px;
+  }
+
+  .flip-card-front img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 10px;
+  }
+
+  .flip-card-front h3 {
+    font-size: 0.9rem;
+  }
+
+  .flip-card-front h4 {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+
+  .flip-card-back p {
+    font-size: 0.75rem;
+  }
+
+  .socials img {
+    width: 20px;
+    height: 20px;
   }
 }

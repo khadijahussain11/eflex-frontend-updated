@@ -20,7 +20,7 @@ export default function Contact() {
 
     try {
       // change to your backend URL after deploy
-      const res = await axios.post("http://localhost:5000/contact", form, {
+      const res = await axios.post("https://eflex-frontend-updated.vercel.app/contact", form, {
         headers: { "Content-Type": "application/json" },
       });
 

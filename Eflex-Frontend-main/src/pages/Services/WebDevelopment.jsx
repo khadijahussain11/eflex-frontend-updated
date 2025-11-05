@@ -31,114 +31,83 @@ export default function WebsiteServices() {
 
   // --- Website Packages ---
   const websitePlans = [
-    {
-      name: "Basic",
-      price: "10K",
-      features: [
-        "Single Page Website",
-        "Contact/Query Form",
-        "Unlimited Revisions",
-        "Complete Source Files",
-        "Complete Deployment",
-        "1 Banner Design",
-        "100% Satisfaction Guarantee",
-        "100% Money Back Guarantee",
-        "NO MONTHLY OR ANY HIDDEN FEE",
-      ],
-    },
-    {
-      name: "Premium",
-      price: "15K",
-      badge: "Best value",
-      features: [
-        "5 Pages Website",
-        "Hover Effects",
-        "24 to 48 hours TAT",
-        "Unlimited Revisions",
-        "Complete Source Files",
-        "Complete Deployment",
-        "Dedicated Project Manager",
-        "100% Satisfaction Guarantee",
-        "100% Money Back Guarantee",
-        "NO MONTHLY OR ANY HIDDEN FEE",
-      ],
-    },
-    {
-      name: "Ultimate",
-      price: "30K",
-      features: [
-        "Unlimited Pages Website",
-        "Complete Source Files",
-        "Complete Deployment",
-        "Complete W3C Certified HTML",
-        "Value Added Services",
-        "Dedicated Project Manager",
-        "100% Ownership Rights",
-        "100% Satisfaction Guarantee",
-        "100% Money Back Guarantee",
-        "NO MONTHLY OR ANY HIDDEN FEE",
-      ],
-    },
-  ];
+  {
+    name: "Basic",
+    price: "10K",
+    features: [
+      "Single Page Website",
+      "Contact Form",
+      "Basic Design",
+      "Complete Deployment",
+      "Source Files Included",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "15K",
+    badge: "Best value",
+    features: [
+      "5-Page Website",
+      "Modern Interactive Design",
+      "Hover Effects",
+      "Fast Delivery (24–48 hrs)",
+      "Dedicated Project Manager",
+    ],
+  },
+  {
+    name: "Ultimate",
+    price: "30K",
+    features: [
+      "Unlimited Pages",
+      "Fully Custom Design",
+      "Responsive Layout",
+      "SEO Optimization",
+      "Full Ownership & Deployment",
+    ],
+  },
+];
 
   // --- E-commerce Packages ---
   const ecommercePlans = [
-    {
-      name: "Basic",
-      price: "20K",
-      features: [
-        "5 Pages E-Commerce Website",
-        "Contact/Query Form",
-        "Theme Based Design",
-        "Payment Module Integration",
-        "Sign up Checkout",
-        "Up to 10 Products",
-        "Up to 3 Categories",
-        "Complete Source Files",
-        "100% Satisfaction Guarantee",
-        "100% Money Back Guarantee",
-        "NO MONTHLY OR ANY HIDDEN FEE",
-      ],
-    },
-    {
-      name: "Premium",
-      price: "30K",
-      badge: "Best value",
-      features: [
-        "Up to 10 Pages E-Commerce",
-        "High-end Custom Design",
-        "Up to 50 Products",
-        "Up to 5 Categories",
-        "Complete Source Files",
-        "Payment Module Integration",
-        "Complete W3C Certified HTML",
-        "Value Added Services",
-        "Dedicated Project Manager",
-        "100% Satisfaction Guarantee",
-        "100% Money Back Guarantee",
-        "NO MONTHLY OR ANY HIDDEN FEE",
-      ],
-    },
-    {
-      name: "Ultimate",
-      price: "50K",
-      features: [
-        "Unlimited Pages E-Commerce",
-        "Admin Panel",
-        "Up to 500 Products",
-        "Up to 50 Categories",
-        "Mobile Responsive",
-        "Tax Calculator Integration",
-        "Shipping Calculator",
-        "Wishlist",
-        "Complete Source Files",
-        "Dedicated Project Manager",
-        "100% Satisfaction Guarantee",
-        "100% Money Back Guarantee",
-        "NO MONTHLY OR ANY HIDDEN FEE",
-      ],
-    },
-  ];
+  {
+    name: "Basic",
+    price: "20K",
+    features: [
+      "5-Page E-Commerce Website",
+      "Theme-Based Design",
+      "Payment Integration",
+      "Up to 10 Products",
+      "Contact Form Included",
+      "Source Files Provided",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "30K",
+    badge: "Best value",
+    features: [
+      "10-Page Custom E-Commerce Website",
+      "High-End Design",
+      "Up to 50 Products",
+      "Payment Integration",
+      "Dedicated Project Manager",
+      "Source Files Included",
+    ],
+  },
+  {
+    name: "Ultimate",
+    price: "50K",
+    features: [
+      "Unlimited Pages & Products",
+      "Admin Panel Included",
+      "Mobile Responsive Design",
+      "Tax & Shipping Calculators",
+      "Wishlist Feature",
+      "Dedicated Manager & Full Source Files",
+    ],
+  },
+];
+
 
   return (
     <div className="website-services">
